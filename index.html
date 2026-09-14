@@ -1382,4 +1382,1438 @@ main {
     font-family: "Chakra Petch", Arial, sans-serif;
     font-size: 9px;
     font-weight: 600;
-    letter-spacing: .0
+    letter-spacing: .02em;
+    opacity: .72;
+}
+
+.link:hover small {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+
+    margin: 16px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    color: white;
+
+    border-radius: 19px;
+
+    background:
+
+        linear-gradient(
+            #0087bf,
+            #004d88
+        );
+
+    border: 2px solid rgba(255,255,255,.7);
+
+    box-shadow:
+        inset 0 2px 5px rgba(255,255,255,.25);
+}
+
+footer strong {
+
+    font-family: Orbitron, sans-serif;
+
+    letter-spacing: .12em;
+}
+
+.footer-small {
+
+    margin-top: 8px;
+
+    font-size: 11px;
+
+    opacity: .8;
+}
+
+
+/* =========================================================
+   CURSOR SPARKLES
+   ========================================================= */
+
+.cursor-spark {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    color: white;
+
+    font-size: 14px;
+
+    text-shadow:
+        0 0 8px #00cfff;
+
+    animation:
+        sparkleFade .65s ease-out forwards;
+}
+
+@keyframes sparkleFade {
+
+    0% {
+        transform: scale(.4);
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-25px)
+            scale(1.3)
+            rotate(40deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+    .window,
+    .window.third {
+        grid-column: span 12;
+    }
+
+    .application {
+        grid-template-columns: 1fr;
+    }
+
+    .sun {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .site {
+        width: calc(100% - 8px);
+
+        margin-top: 4px;
+    }
+
+    .system-bar {
+
+        font-size: 7px;
+
+        padding: 8px;
+    }
+
+    .hero {
+
+        min-height: 390px;
+
+        padding: 35px 12px;
+    }
+
+    .logo-orb {
+
+        width: 95px;
+        height: 95px;
+
+        font-size: 30px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .tagline {
+        font-size: 14px;
+    }
+
+    .nav {
+        padding: 8px;
+    }
+
+    .y2k-button {
+
+        flex: 1 1 30%;
+
+        font-size: 8px;
+
+        padding:
+            8px 7px;
+    }
+
+    .window-content {
+        padding: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCE MOTION ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     FRUTIGER AERO BACKGROUND
+     ========================================================= -->
+
+<div class="aero-world">
+
+    <div class="sun"></div>
+
+    <div class="cloud one"></div>
+    <div class="cloud two"></div>
+    <div class="cloud three"></div>
+
+    <div class="bubbles">
+
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+
+    </div>
+
+    <div class="water"></div>
+
+    <div class="grass"></div>
+
+</div>
+
+
+<!-- =========================================================
+     MAIN SITE
+     ========================================================= -->
+
+<div class="site">
+
+
+<!-- =========================================================
+     SYSTEM BAR
+     ========================================================= -->
+
+<div class="system-bar">
+
+    <span class="online">
+        <span class="led"></span>
+        CELESTE SYSTEM ONLINE
+    </span>
+
+    <span id="clock">
+        00:00:00
+    </span>
+
+    <span>
+        WEB 2.0 // AERO MODE
+    </span>
+
+</div>
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section class="hero" id="home">
+
+    <div>
+
+        <div class="logo-orb">
+            C✦
+        </div>
+
+
+        <h1>
+            CELESTE<br>
+            <span>ORGANISATION</span>
+        </h1>
+
+
+        <!-- EDIT: Change Celeste's tagline here -->
+
+        <p class="tagline">
+
+            a little corner of the internet for
+            words, art, ideas & people.
+
+        </p>
+
+
+        <div class="badge">
+
+            🦋 EST. 2024
+            &nbsp; • &nbsp;
+            DIGITAL LITERARY SPACE
+            &nbsp; • &nbsp;
+            ✦
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     NAVIGATION
+     ========================================================= -->
+
+<nav class="nav">
+
+    <a href="#about" class="y2k-button">
+        ABOUT
+    </a>
+
+    <a href="#eic" class="y2k-button">
+        EIC'S NOTE
+    </a>
+
+    <a href="#staff" class="y2k-button">
+        STAFF
+    </a>
+
+    <a href="#issues" class="y2k-button">
+        ISSUES
+    </a>
+
+    <a href="#apply" class="y2k-button">
+        VOLUNTEER
+    </a>
+
+    <a href="#links" class="y2k-button">
+        LINKS
+    </a>
+
+</nav>
+
+
+<main>
+
+<div class="grid">
+
+
+<!-- =========================================================
+     ABOUT CELESTE
+     ========================================================= -->
+
+<section class="window wide" id="about">
+
+    <div class="window-title">
+
+        <span>
+            📖 about_celeste.exe
+        </span>
+
+        <div class="controls">
+            <span>—</span>
+            <span>□</span>
+            <span>×</span>
+        </div>
+
+    </div>
+
+
+    <div class="window-content">
+
+        <h2>
+            ★ WHAT IS CELESTE?
+        </h2>
+
+
+        <!-- EDIT: Replace this with Celeste's official description -->
+
+        <p>
+
+            <strong>Celeste Organisation</strong>
+            is an independent creative and literary space
+            built around young voices, experimentation,
+            imagination and the strange little things that
+            make being alive feel worth documenting.
+
+        </p>
+
+
+        <p>
+
+            We make room for poetry, prose, art, criticism,
+            culture, conversations and everything that refuses
+            to fit neatly into one category.
+
+        </p>
+
+
+        <p class="edit-note">
+
+            [ EDIT THIS SECTION WITH CELESTE'S OFFICIAL
+            MISSION / VISION / DESCRIPTION ]
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EIC MESSAGE
+     ========================================================= -->
+
+<section class="window wide" id="eic">
+
+    <div class="window-title">
+
+        <span>
+            💌 message_from_the_eic.txt
+        </span>
+
+        <div class="controls">
+            <span>—</span>
+            <span>□</span>
+            <span>×</span>
+        </div>
+
+    </div>
+
+
+    <div class="window-content">
+
+        <div class="letter">
+
+            <h2>
+                WORDS FROM OUR EIC
+            </h2>
+
+
+            <!-- EDIT: Replace with actual EIC message -->
+
+            <p>
+
+                “Celeste began with a simple idea:
+                that young people deserve spaces where their
+                work can exist without having to ask permission
+                to be meaningful.
+
+            </p>
+
+
+            <p>
+
+                Every issue, submission and conversation is
+                another little piece of that world.
+
+                Thank you for reading, creating, submitting
+                and staying curious.”
+
+            </p>
+
+
+            <div class="signature">
+
+                — [EIC NAME]
+
+            </div>
+
+
+            <p class="edit-note">
+
+                [ EDIT: ADD EIC NAME + FINAL MESSAGE HERE ]
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     STAFF
+     ========================================================= -->
+
+<section class="window wide" id="staff">
+
+    <div class="window-title">
+
+        <span>
+            👥 staff_directory.sys
+        </span>
+
+        <div class="controls">
+            <span>—</span>
+            <span>□</span>
+            <span>×</span>
+        </div>
+
+    </div>
+
+
+    <div class="window-content">
+
+        <h2>
+            ★ THE PEOPLE BEHIND CELESTE
+        </h2>
+
+
+        <div class="staff-grid">
+
+
+            <!-- EDIT: STAFF CARD -->
+
+            <article class="aero-card">
+
+                <div class="avatar">
+                    E
+                </div>
+
+                <strong>
+                    [EIC NAME]
+                </strong>
+
+                <span class="role">
+                    EDITOR-IN-CHIEF
+                </span>
+
+                <p class="edit-note">
+                    [ short bio / pronouns / socials ]
+                </p>
+
+            </article>
+
+
+
+            <!-- EDIT: STAFF CARD -->
+
+            <article class="aero-card">
+
+                <div class="avatar">
+                    M
+                </div>
+
+                <strong>
+                    [STAFF NAME]
+                </strong>
+
+                <span class="role">
+                    MANAGING EDITOR
+                </span>
+
+                <p class="edit-note">
+                    [ short bio / pronouns / socials ]
+                </p>
+
+            </article>
+
+
+
+            <!-- EDIT: STAFF CARD -->
+
+            <article class="aero-card">
+
+                <div class="avatar">
+                    W
+                </div>
+
+                <strong>
+                    [STAFF NAME]
+                </strong>
+
+                <span class="role">
+                    WRITER / EDITOR
+                </span>
+
+                <p class="edit-note">
+                    [ short bio / pronouns / socials ]
+                </p>
+
+            </article>
+
+
+
+            <!-- EDIT: STAFF CARD -->
+
+            <article class="aero-card">
+
+                <div class="avatar">
+                    A
+                </div>
+
+                <strong>
+                    [STAFF NAME]
+                </strong>
+
+                <span class="role">
+                    ART / DESIGN
+                </span>
+
+                <p class="edit-note">
+                    [ short bio / pronouns / socials ]
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ISSUES
+     ========================================================= -->
+
+<section class="window wide" id="issues">
+
+    <div class="window-title">
+
+        <span>
+            📚 celeste_archive.zip
+        </span>
+
+        <div class="controls">
+            <span>—</span>
+            <span>□</span>
+            <span>×</span>
+        </div>
+
+    </div>
+
+
+    <div class="window-content">
+
+        <h2>
+            ★ ISSUES / ARCHIVE
+        </h2>
+
+
+        <div class="issue-grid">
+
+
+            <!-- EDIT: ISSUE -->
+
+            <article class="aero-card issue">
+
+                <div>
+
+                    <span class="issue-number">
+                        ISSUE 01
+                    </span>
+
+                    <h3>
+                        [ISSUE TITLE]
+                    </h3>
+
+                    <p>
+                        [ One-line description
+                        of the issue. ]
+                    </p>
+
+                </div>
+
+
+                <!-- EDIT: Replace # with issue link -->
+
+                <a
+                    href="#"
+                    class="y2k-button"
+                    target="_blank"
+                >
+                    READ ISSUE ↗
+                </a>
+
+            </article>
+
+
+
+            <!-- EDIT: ISSUE -->
+
+            <article class="aero-card issue">
+
+                <div>
+
+                    <span class="issue-number">
+                        ISSUE 02
+                    </span>
+
+                    <h3>
+                        [ISSUE TITLE]
+                    </h3>
+
+                    <p>
+                        [ One-line description
+                        of the issue. ]
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="y2k-button"
+                    target="_blank"
+                >
+                    READ ISSUE ↗
+                </a>
+
+            </article>
+
+
+
+            <!-- EDIT: ISSUE -->
+
+            <article class="aero-card issue">
+
+                <div>
+
+                    <span class="issue-number">
+                        ISSUE 03
+                    </span>
+
+                    <h3>
+                        [ISSUE TITLE]
+                    </h3>
+
+                    <p>
+                        [ One-line description
+                        of the issue. ]
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="y2k-button"
+                    target="_blank"
+                >
+                    READ ISSUE ↗
+                </a>
+
+            </article>
+
+
+        </div>
+
+
+        <p class="edit-note">
+
+            [ EDIT: COPY AN ISSUE CARD TO ADD
+            MORE ISSUES ]
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     VOLUNTEER APPLICATION
+     ========================================================= -->
+
+<section class="window wide" id="apply">
+
+    <div class="window-title">
+
+        <span>
+            📝 volunteer_application.exe
+        </span>
+
+        <div class="controls">
+            <span>—</span>
+            <span>□</span>
+            <span>×</span>
+        </div>
+
+    </div>
+
+
+    <div class="window-content">
+
+        <h2>
+            ★ JOIN THE CELESTE TEAM
+        </h2>
+
+
+        <div class="application">
+
+
+            <form
+                class="form"
+                onsubmit="submitApplication(event)"
+            >
+
+
+                <div>
+
+                    <label>
+                        NAME
+                    </label>
+
+                    <input
+                        type="text"
+                        placeholder="[ your name ]"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div>
+
+                    <label>
+                        EMAIL
+                    </label>
+
+                    <input
+                        type="email"
+                        placeholder="[ your email ]"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div>
+
+                    <label>
+                        ROLE
+                    </label>
+
+                    <select required>
+
+                        <option value="">
+                            select a role...
+                        </option>
+
+                        <option>
+                            Writer
+                        </option>
+
+                        <option>
+                            Editor
+                        </option>
+
+                        <option>
+                            Graphic Designer
+                        </option>
+
+                        <option>
+                            Illustrator / Artist
+                        </option>
+
+                        <option>
+                            Social Media
+                        </option>
+
+                        <option>
+                            Outreach
+                        </option>
+
+                        <option>
+                            Photography
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div>
+
+                    <label>
+                        TELL US ABOUT YOU
+                    </label>
+
+                    <textarea
+                        placeholder="[ portfolio / interests / why Celeste? ]"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+
+                <button
+                    class="y2k-button"
+                    type="submit"
+                >
+                    TRANSMIT APPLICATION ✦
+                </button>
+
+
+            </form>
+
+
+
+            <div class="requirements">
+
+                <div class="aero-card">
+
+                    <h3>
+                        💿 BEFORE YOU APPLY
+                    </h3>
+
+                    <div class="requirement">
+                        ✦ Be curious.
+                    </div>
+
+                    <div class="requirement">
+                        ✦ Bring your own voice.
+                    </div>
+
+                    <div class="requirement">
+                        ✦ Have something to say.
+                    </div>
+
+                    <div class="requirement">
+                        ✦ Respect other people's work.
+                    </div>
+
+                    <div class="requirement">
+                        ✦ Read the application requirements.
+                    </div>
+
+                </div>
+
+
+                <p class="edit-note">
+
+                    [ EDIT: ADD AGE REQUIREMENTS,
+                    DEADLINE, PORTFOLIO REQUIREMENTS,
+                    APPLICATION LINK + CONTACT EMAIL ]
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SOCIAL LINKS
+     ========================================================= -->
+
+<section class="window wide" id="links">
+
+    <div class="window-title">
+
+        <span>
+            🔗 celeste_network.exe
+        </span>
+
+        <div class="controls">
+            <span>—</span>
+            <span>□</span>
+            <span>×</span>
+        </div>
+
+    </div>
+
+
+    <div class="window-content">
+
+        <h2>
+            ★ FIND CELESTE ELSEWHERE
+        </h2>
+
+
+        <div class="links">
+
+
+            <!-- EDIT: Replace # with actual Instagram -->
+
+            <a
+                href="#"
+                class="link"
+                target="_blank"
+            >
+
+                <span class="link-icon">
+                    📸
+                </span>
+
+                INSTAGRAM
+                <small> @celesteorganisation </small>
+
+            </a>
+
+
+
+            <!-- EDIT: Replace # with actual Substack -->
+
+            <a
+                href="#"
+                class="link"
+                target="_blank"
+            >
+
+                <span class="link-icon">
+                    📰
+                </span>
+
+                SUBSTACK
+                <small> read our publications </small>
+
+            </a>
+
+
+
+            <!-- EDIT: Replace # with actual LinkedIn -->
+
+            <a
+                href="#"
+                class="link"
+                target="_blank"
+            >
+
+                <span class="link-icon">
+                    💼
+                </span>
+
+                LINKEDIN
+                <small> connect with Celeste </small>
+
+            </a>
+
+
+
+            <!-- EDIT: Replace # with actual email -->
+
+            <a
+                href="#"
+                class="link"
+            >
+
+                <span class="link-icon">
+                    ✉️
+                </span>
+
+                EMAIL
+                <small> say hello ♡ </small>
+
+            </a>
+
+
+
+            <!-- EDIT: Add another Celeste platform -->
+
+            <a
+                href="#"
+                class="link"
+                target="_blank"
+            >
+
+                <span class="link-icon">
+                    🌐
+                </span>
+
+                OTHER LINK
+                <small> add another platform </small>
+
+            </a>
+
+
+        </div>
+
+
+        <p class="edit-note">
+
+            [ EDIT: REPLACE EVERY href="#" ABOVE
+            WITH CELESTE'S REAL LINKS ]
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     LITTLE Y2K WINDOWS
+     ========================================================= -->
+
+<section class="window third">
+
+    <div class="window-title">
+
+        <span>
+            🌱 vibe_check.exe
+        </span>
+
+        <div class="controls">
+            <span>×</span>
+        </div>
+
+    </div>
+
+
+    <div class="window-content">
+
+        <h2 style="font-size:19px;">
+            CURRENT VIBE
+        </h2>
+
+        <p>
+            ☁️ cloud nine
+        </p>
+
+        <p>
+            🌊 internet ocean
+        </p>
+
+        <p>
+            🦋 maximum curiosity
+        </p>
+
+        <p>
+            💿 minimum boring
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<section class="window third">
+
+    <div class="window-title">
+
+        <span>
+            💾 visitor.log
+        </span>
+
+        <div class="controls">
+            <span>×</span>
+        </div>
+
+    </div>
+
+
+    <div class="window-content">
+
+        <h2 style="font-size:19px;">
+            YOU ARE HERE
+        </h2>
+
+        <p id="visitorText">
+            somewhere between
+            the clouds & the archive.
+        </p>
+
+        <p class="edit-note">
+            CELESTE WEB // v2.0
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<section class="window third">
+
+    <div class="window-title">
+
+        <span>
+            ✨ sparkle.dll
+        </span>
+
+        <div class="controls">
+            <span>×</span>
+        </div>
+
+    </div>
+
+
+    <div class="window-content">
+
+        <h2 style="font-size:19px;">
+            REMINDER
+        </h2>
+
+        <p>
+            <strong>
+                make something weird.
+            </strong>
+        </p>
+
+        <p>
+            then put it on the internet.
+        </p>
+
+        <p>
+            then make something weirder.
+        </p>
+
+    </div>
+
+</section>
+
+
+</div>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+    <strong>
+        CELESTE ORGANISATION ★
+    </strong>
+
+    <div class="footer-small">
+
+        made with words, pixels &
+        an unreasonable amount of aqua blue.
+
+        <br><br>
+
+        © <span id="year"></span>
+        Celeste Organisation
+        · all rights reserved
+
+    </div>
+
+</footer>
+
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   LIVE Y2K CLOCK
+   ========================================================= */
+
+function updateClock() {
+
+    const now = new Date();
+
+    const time =
+        now.toLocaleTimeString(
+            [],
+            {
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                hour12: false
+            }
+        );
+
+    document.getElementById("clock").textContent = time;
+
+}
+
+updateClock();
+
+setInterval(updateClock, 1000);
+
+
+
+/* =========================================================
+   CURRENT YEAR
+   ========================================================= */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+
+/* =========================================================
+   CURSOR SPARKLES
+   ========================================================= */
+
+let sparkleCounter = 0;
+
+document.addEventListener(
+    "pointermove",
+    function(event) {
+
+        sparkleCounter++;
+
+        /*
+         * Don't create a sparkle for
+         * every single mouse movement.
+         */
+
+        if (sparkleCounter % 5 !== 0)
+            return;
+
+
+        const spark =
+            document.createElement("span");
+
+
+        spark.className =
+            "cursor-spark";
+
+
+        spark.textContent =
+            ["✦", "✧", "·", "⋆"]
+            [
+                Math.floor(
+                    Math.random() * 4
+                )
+            ];
+
+
+        spark.style.left =
+            event.clientX + "px";
+
+
+        spark.style.top =
+            event.clientY + "px";
+
+
+        document.body.appendChild(spark);
+
+
+        setTimeout(
+            () => spark.remove(),
+            650
+        );
+
+    }
+);
+
+
+
+/* =========================================================
+   APPLICATION BUTTON
+   =========================================================
+
+   IMPORTANT:
+
+   GitHub Pages is static.
+
+   Therefore this demo button DOES NOT
+   automatically send applications.
+
+   When Celeste has a Google Form,
+   Tally form, Formspree endpoint etc.,
+   replace this form with that link.
+   ========================================================= */
+
+function submitApplication(event) {
+
+    event.preventDefault();
+
+
+    alert(
+
+        "✦ APPLICATION READY ✦\n\n" +
+
+        "The Celeste application form is currently " +
+        "a front-end demo.\n\n" +
+
+        "Connect this section to Google Forms, " +
+        "Tally, Formspree or another form service " +
+        "when you're ready."
+
+    );
+
+}
+
+
+
+/* =========================================================
+   RANDOM VISITOR MESSAGE
+   ========================================================= */
+
+const visitorMessages = [
+
+    "somewhere between the clouds & the archive.",
+
+    "currently floating through celeste.",
+
+    "you found the shiny corner of the internet.",
+
+    "signal received. welcome aboard.",
+
+    "the internet is weird. celeste likes it that way.",
+
+    "you are officially inside the aero zone."
+
+];
+
+
+document.getElementById(
+    "visitorText"
+).textContent =
+
+    visitorMessages[
+        Math.floor(
+            Math.random() *
+            visitorMessages.length
+        )
+    ];
+
+
+</script>
+
+
+</body>
+</html>
