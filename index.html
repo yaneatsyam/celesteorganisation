@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,776 +12,887 @@
 /* =========================================================
    CELESTE ORGANISATION
    FRUTIGER AERO / Y2K WEBSPACE
+   EDIT ANYTHING MARKED "EDIT THIS"
    ========================================================= */
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: "Trebuchet MS", Arial, sans-serif;
-  color: #164c65;
+    margin: 0;
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+    color: #075b76;
+    overflow-x: hidden;
 
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,.9) 0 3px, transparent 4px),
-    radial-gradient(circle at 80% 35%, rgba(255,255,255,.7) 0 4px, transparent 5px),
-    linear-gradient(
-      180deg,
-      #54dfff 0%,
-      #a8efff 32%,
-      #e8ffff 60%,
-      #9ee8bd 100%
-    );
+    background:
+        linear-gradient(
+            to bottom,
+            #72dcff 0%,
+            #baf3ff 38%,
+            #dffff4 62%,
+            #8bdc75 63%,
+            #4fae4e 100%
+        );
 
-  background-size: auto, auto, 100% 100%;
-  overflow-x: hidden;
+    min-height: 100vh;
 }
 
-
 /* =========================================================
-   FLOATING AERO OBJECTS
+   SKY
    ========================================================= */
 
 .sky {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: -2;
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    overflow: hidden;
+    pointer-events: none;
 }
 
-.bubble {
-  position: absolute;
-  border-radius: 50%;
+/* SUN */
 
-  background:
-    radial-gradient(
-      circle at 30% 25%,
-      rgba(255,255,255,.95) 0 8%,
-      rgba(255,255,255,.35) 18%,
-      rgba(104,226,255,.18) 55%,
-      rgba(255,255,255,.08) 75%
-    );
+.sun {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    right: 7%;
+    top: 30px;
 
-  border: 2px solid rgba(255,255,255,.65);
+    border-radius: 50%;
 
-  box-shadow:
-    inset -8px -10px 18px rgba(0,155,210,.12),
-    inset 8px 8px 15px rgba(255,255,255,.6),
-    0 8px 25px rgba(0,140,180,.12);
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffffff 0%,
+            #fffef0 15%,
+            #fff79b 38%,
+            #ffd84a 70%,
+            #ffb300 100%
+        );
 
-  animation: float 8s ease-in-out infinite;
+    box-shadow:
+        0 0 35px #fff6a3,
+        0 0 90px #fff6a3,
+        inset -15px -20px 30px rgba(255,150,0,.25);
 }
-
-.bubble.one {
-  width: 95px;
-  height: 95px;
-  left: 4%;
-  top: 18%;
-}
-
-.bubble.two {
-  width: 42px;
-  height: 42px;
-  right: 9%;
-  top: 27%;
-  animation-delay: 1s;
-}
-
-.bubble.three {
-  width: 65px;
-  height: 65px;
-  left: 12%;
-  bottom: 18%;
-  animation-delay: 2s;
-}
-
-.bubble.four {
-  width: 28px;
-  height: 28px;
-  right: 23%;
-  bottom: 25%;
-  animation-delay: 3s;
-}
-
-@keyframes float {
-  0%,100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-18px);
-  }
-}
-
 
 /* CLOUDS */
 
 .cloud {
-  position: absolute;
-  color: white;
-  opacity: .85;
-  filter: drop-shadow(0 6px 5px rgba(55,150,180,.12));
-  font-size: 80px;
-  letter-spacing: -25px;
-  white-space: nowrap;
+    position: absolute;
+    width: 260px;
+    height: 80px;
+
+    background: rgba(255,255,255,.94);
+
+    border-radius: 80px;
+
+    box-shadow:
+        0 10px 0 rgba(140,220,245,.35),
+        inset 0 -10px 15px rgba(180,240,255,.45),
+        0 15px 35px rgba(40,150,190,.18);
 }
 
-.cloud.one {
-  top: 5%;
-  left: -10px;
+.cloud::before,
+.cloud::after {
+    content: "";
+    position: absolute;
+    background: inherit;
+    border-radius: 50%;
 }
 
-.cloud.two {
-  top: 14%;
-  right: 3%;
-  transform: scale(.65);
+.cloud::before {
+    width: 110px;
+    height: 110px;
+    left: 35px;
+    bottom: 20px;
 }
 
-.cloud.three {
-  bottom: 7%;
-  left: 35%;
-  transform: scale(.45);
+.cloud::after {
+    width: 135px;
+    height: 135px;
+    right: 30px;
+    bottom: 10px;
 }
 
+.cloud1 {
+    top: 90px;
+    left: -50px;
+    transform: scale(.8);
+    animation: drift 45s linear infinite;
+}
+
+.cloud2 {
+    top: 270px;
+    right: -90px;
+    transform: scale(1.2);
+    animation: drift2 55s linear infinite;
+}
+
+.cloud3 {
+    top: 450px;
+    left: 8%;
+    transform: scale(.55);
+    opacity: .8;
+}
+
+@keyframes drift {
+    from { transform: translateX(-100px) scale(.8); }
+    to { transform: translateX(110vw) scale(.8); }
+}
+
+@keyframes drift2 {
+    from { transform: translateX(100px) scale(1.2); }
+    to { transform: translateX(-120vw) scale(1.2); }
+}
+
+/* =========================================================
+   BUBBLES
+   ========================================================= */
+
+.bubbles {
+    position: fixed;
+    inset: 0;
+    z-index: -5;
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 28% 22%,
+            rgba(255,255,255,.98) 0%,
+            rgba(255,255,255,.75) 8%,
+            rgba(255,255,255,.15) 22%,
+            rgba(80,210,255,.20) 48%,
+            rgba(0,160,230,.18) 100%
+        );
+
+    border: 2px solid rgba(255,255,255,.65);
+
+    box-shadow:
+        inset -12px -15px 20px rgba(0,140,220,.15),
+        inset 8px 8px 15px rgba(255,255,255,.6),
+        0 8px 25px rgba(0,130,190,.15);
+
+    animation: float 8s ease-in-out infinite;
+}
+
+.b1 { width: 120px; height: 120px; left: 3%; top: 17%; }
+.b2 { width: 55px; height: 55px; left: 18%; top: 8%; animation-delay: 1s; }
+.b3 { width: 180px; height: 180px; right: 3%; top: 38%; animation-delay: 2s; }
+.b4 { width: 70px; height: 70px; right: 25%; top: 18%; animation-delay: 3s; }
+.b5 { width: 90px; height: 90px; left: 8%; top: 65%; animation-delay: 2s; }
+.b6 { width: 45px; height: 45px; right: 10%; top: 70%; animation-delay: 4s; }
+.b7 { width: 140px; height: 140px; right: 30%; top: 82%; animation-delay: 1s; }
+.b8 { width: 35px; height: 35px; left: 35%; top: 55%; animation-delay: 3s; }
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-22px) rotate(5deg);
+    }
+}
+
+/* =========================================================
+   LITTLE SPARKLES
+   ========================================================= */
+
+.sparkle {
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    text-shadow: 0 0 8px white;
+    animation: sparkle 2s infinite alternate;
+}
+
+.s1 { left: 12%; top: 28%; }
+.s2 { right: 16%; top: 12%; animation-delay: .5s; }
+.s3 { left: 78%; top: 56%; animation-delay: 1s; }
+.s4 { left: 25%; top: 80%; animation-delay: 1.5s; }
+
+@keyframes sparkle {
+    from { opacity: .3; transform: scale(.7); }
+    to { opacity: 1; transform: scale(1.3); }
+}
 
 /* =========================================================
    MAIN WRAPPER
    ========================================================= */
 
 .wrapper {
-  width: min(1120px, 92%);
-  margin: auto;
+    width: min(1120px, 94%);
+    margin: auto;
 }
-
 
 /* =========================================================
-   TOP STATUS BAR
+   OLD INTERNET TOP BAR
    ========================================================= */
 
-.status {
-  margin-top: 18px;
-  padding: 7px 14px;
+.topbar {
+    margin-top: 12px;
+    padding: 7px 12px;
 
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
+    background: linear-gradient(
+        #eaffff,
+        #8be8ff 45%,
+        #36bce8 50%,
+        #a8f4ff
+    );
 
-  font-size: 12px;
-  font-weight: bold;
+    border: 2px solid white;
+    border-radius: 12px;
 
-  color: #17657d;
+    box-shadow:
+        0 3px 0 #1684ae,
+        0 7px 18px rgba(0,100,160,.25);
 
-  background: rgba(255,255,255,.55);
-  border: 1px solid rgba(255,255,255,.95);
-  border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  box-shadow:
-    inset 0 1px 3px white,
-    0 4px 12px rgba(0,100,150,.12);
+    font-size: 12px;
+    font-weight: bold;
 }
-
-.online {
-  color: #15965d;
-}
-
 
 /* =========================================================
    HEADER
    ========================================================= */
 
 header {
-  margin-top: 12px;
-  padding: 35px 30px 25px;
-
-  text-align: center;
-
-  border-radius: 35px;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,.86),
-      rgba(220,249,255,.72)
-    );
-
-  border: 2px solid rgba(255,255,255,.95);
-
-  box-shadow:
-    0 14px 35px rgba(0,125,165,.18),
-    inset 0 3px 5px white,
-    inset 0 -8px 18px rgba(61,195,225,.08);
-
-  backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 35px 10px 20px;
 }
+
+/* CELESTE LOGO */
 
 .logo {
-  position: relative;
-  display: inline-block;
+    display: inline-block;
 
-  font-family: Arial Black, Arial, sans-serif;
-  font-size: clamp(3.2rem, 11vw, 7rem);
-  letter-spacing: 8px;
+    font-family: Arial Black, Impact, sans-serif;
+    font-size: clamp(55px, 13vw, 125px);
+    letter-spacing: -8px;
 
-  color: #13a8d0;
+    color: white;
 
-  text-shadow:
-    0 3px 0 #fff,
-    0 6px 0 rgba(255,255,255,.7),
-    3px 8px 10px rgba(0,110,160,.25);
-}
+    text-shadow:
+        0 5px 0 #54bde3,
+        0 8px 0 #238fb8,
+        0 12px 20px rgba(0,100,160,.35);
 
-/* shiny reflection */
+    transform: rotate(-2deg);
 
-.logo::after {
-  content: "";
-  position: absolute;
-  left: 8%;
-  right: 8%;
-  top: 8%;
-
-  height: 25%;
-
-  border-radius: 100%;
-
-  background: rgba(255,255,255,.5);
-  filter: blur(3px);
+    filter:
+        drop-shadow(0 0 4px rgba(255,255,255,.9));
 }
 
 .subtitle {
-  margin-top: -8px;
-  color: #327b91;
-  font-size: 15px;
-  letter-spacing: 2px;
-}
+    margin-top: -10px;
 
+    display: inline-block;
+
+    padding: 8px 20px;
+
+    background: rgba(255,255,255,.6);
+    border: 2px solid white;
+    border-radius: 30px;
+
+    box-shadow:
+        inset 0 3px 8px rgba(255,255,255,.8),
+        0 5px 15px rgba(0,100,150,.2);
+
+    color: #087092;
+    font-weight: bold;
+}
 
 /* =========================================================
-   NAVIGATION
+   NAV
    ========================================================= */
 
-nav {
-  margin-top: 25px;
-
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 9px;
+.nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px auto 25px;
 }
 
-nav a {
-  position: relative;
+.nav a {
+    text-decoration: none;
+    color: white;
 
-  padding: 10px 18px;
+    font-weight: bold;
+    font-size: 13px;
 
-  color: #086582;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: bold;
+    padding: 10px 17px;
 
-  border-radius: 20px;
+    border-radius: 22px;
 
-  background:
-    linear-gradient(
-      180deg,
-      #ffffff 0%,
-      #e7fcff 42%,
-      #9be5f5 48%,
-      #d8f8ff 100%
-    );
+    background:
+        linear-gradient(
+            to bottom,
+            #efffff 0%,
+            #76ddf7 42%,
+            #12a9da 50%,
+            #5ed7ef 100%
+        );
 
-  border: 1px solid white;
+    border: 2px solid white;
 
-  box-shadow:
-    0 4px 9px rgba(0,110,150,.18),
-    inset 0 2px 3px white;
+    box-shadow:
+        0 3px 0 #1683aa,
+        0 7px 12px rgba(0,100,160,.25);
 
-  transition: .2s ease;
+    text-shadow: 0 1px 2px #08708e;
+
+    transition: .2s;
 }
 
-nav a:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 8px 15px rgba(0,110,150,.22),
-    inset 0 2px 3px white;
-}
+.nav a:hover {
+    transform: translateY(-3px) scale(1.05);
 
+    box-shadow:
+        0 5px 0 #1683aa,
+        0 10px 20px rgba(0,100,160,.35);
+}
 
 /* =========================================================
    HERO
    ========================================================= */
 
 .hero {
-  position: relative;
-  margin-top: 20px;
-  padding: 60px 35px;
+    position: relative;
 
-  text-align: center;
+    padding: 55px 35px;
 
-  border-radius: 38px;
+    margin-bottom: 30px;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,.78),
-      rgba(206,249,255,.72)
-    );
+    border-radius: 45px;
 
-  border: 2px solid white;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.85),
+            rgba(142,239,255,.55),
+            rgba(255,255,255,.7)
+        );
 
-  box-shadow:
-    0 15px 35px rgba(0,120,160,.18),
-    inset 0 4px 7px white;
+    border: 4px solid rgba(255,255,255,.9);
 
-  overflow: hidden;
+    box-shadow:
+        inset 0 0 35px rgba(255,255,255,.9),
+        inset 0 -15px 30px rgba(0,160,220,.12),
+        0 12px 35px rgba(0,100,160,.25);
+
+    overflow: hidden;
 }
 
 .hero::before {
-  content: "✦   ·   ✧   ·   ✦   ·   ✧   ·   ✦";
-  position: absolute;
-  top: 12px;
-  left: 0;
-  right: 0;
-
-  color: rgba(255,255,255,.8);
-  font-size: 18px;
+    content: "✦ ✧ ✦ ✧ ✦ ✧ ✦";
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 15px;
 }
 
 .hero h1 {
-  margin: 5px 0 15px;
+    margin: 0;
 
-  font-size: clamp(2rem, 7vw, 4rem);
+    font-family: Arial Black, Impact, sans-serif;
 
-  color: #087ea5;
+    font-size: clamp(32px, 6vw, 65px);
 
-  text-shadow:
-    2px 2px white,
-    4px 5px rgba(0,140,180,.12);
+    color: #008bb8;
+
+    text-shadow:
+        2px 3px 0 white,
+        4px 5px 0 rgba(50,170,205,.35);
 }
 
 .hero p {
-  max-width: 720px;
-  margin: auto;
-
-  line-height: 1.8;
-  font-size: 16px;
+    max-width: 720px;
+    font-size: 17px;
+    line-height: 1.7;
 }
 
-.aero-orb {
-  font-size: 48px;
-  margin-bottom: 5px;
-}
+/* floating aero orb */
 
+.hero-orb {
+    position: absolute;
+
+    right: 40px;
+    bottom: 20px;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            white,
+            rgba(255,255,255,.5) 10%,
+            rgba(0,210,255,.25) 45%,
+            rgba(0,140,210,.4)
+        );
+
+    border: 3px solid rgba(255,255,255,.9);
+
+    box-shadow:
+        inset -15px -20px 25px rgba(0,100,200,.2),
+        0 10px 30px rgba(0,100,180,.25);
+
+    animation: float 5s ease-in-out infinite;
+}
 
 /* =========================================================
-   SECTION WINDOWS
+   SECTIONS
    ========================================================= */
 
-section {
-  position: relative;
+.section {
+    margin: 30px 0;
 
-  margin-top: 22px;
-  padding: 30px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.88),
+            rgba(216,251,255,.72)
+        );
 
-  border-radius: 30px;
+    border: 3px solid white;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,.82),
-      rgba(236,253,255,.72)
-    );
+    border-radius: 28px;
 
-  border: 2px solid rgba(255,255,255,.95);
+    box-shadow:
+        inset 0 0 25px rgba(255,255,255,.9),
+        0 10px 30px rgba(0,90,140,.25);
 
-  box-shadow:
-    0 12px 30px rgba(0,110,150,.15),
-    inset 0 3px 5px white;
-
-  backdrop-filter: blur(8px);
+    overflow: hidden;
 }
 
+/* old window title */
 
-/* tiny window bar */
+.windowbar {
+    padding: 8px 12px;
 
-.window-bar {
-  display: flex;
-  align-items: center;
-  gap: 7px;
+    background:
+        linear-gradient(
+            #eaffff,
+            #83e7ff 45%,
+            #21aada 50%,
+            #7be0f4
+        );
 
-  margin: -10px -10px 20px;
-  padding: 7px 10px;
+    border-bottom: 2px solid white;
 
-  border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
 
-  background:
-    linear-gradient(
-      180deg,
-      #ffffff,
-      #bceef8
-    );
+    color: white;
 
-  border: 1px solid white;
+    font-size: 13px;
+    font-weight: bold;
 
-  box-shadow:
-    inset 0 1px 3px white,
-    0 3px 7px rgba(0,100,150,.1);
+    text-shadow: 0 1px 2px #08708e;
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+.windowbuttons span {
+    display: inline-flex;
 
-  background: #7de0ef;
-  border: 1px solid white;
+    width: 18px;
+    height: 18px;
 
-  box-shadow: inset 1px 1px 2px white;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 3px;
+
+    background: linear-gradient(#fff,#8be6fa,#20a9d9);
+
+    border: 1px solid white;
+    border-radius: 4px;
+
+    color: #08708e;
 }
 
-.window-title {
-  margin-left: 5px;
-  font-size: 11px;
-  font-weight: bold;
-  color: #34758a;
+.section-content {
+    padding: 28px;
 }
 
+.section h2 {
+    color: #0086ad;
 
-/* =========================================================
-   TYPOGRAPHY
-   ========================================================= */
+    font-family: Arial Black, Impact, sans-serif;
 
-h2 {
-  margin: 0 0 15px;
+    font-size: 30px;
 
-  font-size: 2rem;
+    margin-top: 0;
 
-  color: #0780a7;
-
-  text-shadow: 1px 2px white;
+    text-shadow:
+        2px 2px white;
 }
 
-h3 {
-  color: #137493;
+.section p {
+    line-height: 1.7;
 }
-
-p {
-  line-height: 1.75;
-}
-
-
-/* =========================================================
-   CARDS
-   ========================================================= */
-
-.cards {
-  display: grid;
-  grid-template-columns:
-    repeat(auto-fit, minmax(210px, 1fr));
-
-  gap: 17px;
-  margin-top: 20px;
-}
-
-.card {
-  padding: 22px;
-
-  border-radius: 24px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.94),
-      rgba(207,247,255,.75)
-    );
-
-  border: 1px solid white;
-
-  box-shadow:
-    0 7px 16px rgba(0,120,150,.13),
-    inset 0 2px 3px white;
-
-  transition: .2s;
-}
-
-.card:hover {
-  transform: translateY(-5px) rotate(-.4deg);
-
-  box-shadow:
-    0 12px 22px rgba(0,120,150,.2),
-    inset 0 2px 3px white;
-}
-
-
-/* =========================================================
-   STAFF
-   ========================================================= */
-
-.staff-card {
-  text-align: center;
-}
-
-.avatar {
-  width: 88px;
-  height: 88px;
-
-  margin: auto;
-  margin-bottom: 13px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  font-size: 35px;
-
-  background:
-    radial-gradient(
-      circle at 30% 25%,
-      white,
-      #c7f7ff 35%,
-      #70d6eb 100%
-    );
-
-  border: 4px solid white;
-
-  box-shadow:
-    inset -5px -7px 10px rgba(0,130,170,.15),
-    inset 5px 5px 10px white,
-    0 7px 14px rgba(0,120,150,.18);
-}
-
-
-/* =========================================================
-   ISSUE COVERS
-   ========================================================= */
-
-.issue {
-  min-height: 220px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  overflow: hidden;
-
-  background:
-    radial-gradient(circle at 80% 20%, #fff 0 3px, transparent 4px),
-    linear-gradient(
-      145deg,
-      #dfffff,
-      #9ae7f5 50%,
-      #b5e8bf
-    );
-}
-
-.issue-number {
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-.issue h3 {
-  font-size: 27px;
-  margin: 10px 0;
-}
-
-
-/* =========================================================
-   BUTTONS
-   ========================================================= */
-
-.button {
-  display: inline-block;
-
-  margin-top: 15px;
-  padding: 13px 23px;
-
-  color: #075f7c;
-  text-decoration: none;
-  font-weight: bold;
-
-  border-radius: 24px;
-
-  background:
-    linear-gradient(
-      180deg,
-      white 0%,
-      #efffff 35%,
-      #82dff1 48%,
-      #c9f6fc 100%
-    );
-
-  border: 2px solid white;
-
-  box-shadow:
-    0 6px 12px rgba(0,100,150,.2),
-    inset 0 2px 3px white;
-
-  transition: .2s;
-}
-
-.button:hover {
-  transform: translateY(-3px) scale(1.02);
-}
-
 
 /* =========================================================
    EIC MESSAGE
    ========================================================= */
 
-.eic-message {
-  position: relative;
-
-  padding: 28px;
-
-  border-radius: 25px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,.9),
-      rgba(206,246,255,.75)
-    );
-
-  border: 1px solid white;
-
-  box-shadow:
-    inset 0 2px 5px white,
-    0 6px 15px rgba(0,110,150,.1);
+.eic {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 25px;
+    align-items: center;
 }
 
-.quote {
-  font-size: 21px;
-  line-height: 1.7;
-  font-style: italic;
-  color: #23677e;
-}
+.eic-photo {
+    width: 150px;
+    height: 150px;
 
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle at 30% 25%, white, #8defff 25%, #19a9d5 70%);
+
+    border: 5px solid white;
+
+    box-shadow:
+        inset -10px -12px 20px rgba(0,80,150,.2),
+        0 8px 20px rgba(0,100,150,.25);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+}
 
 /* =========================================================
-   SOCIAL LINKS
+   STAFF
    ========================================================= */
 
-.socials {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
+.staff-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(190px, 1fr));
+
+    gap: 18px;
 }
 
-.social {
-  flex: 1;
-  min-width: 130px;
+.staff-card {
+    position: relative;
 
-  text-align: center;
+    padding: 20px;
 
-  padding: 16px;
+    text-align: center;
 
-  border-radius: 20px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.9),
+            rgba(125,230,249,.45)
+        );
 
-  color: #09637f;
-  text-decoration: none;
-  font-weight: bold;
+    border: 2px solid white;
 
-  background:
-    linear-gradient(
-      180deg,
-      white,
-      #c9f5fc
-    );
+    border-radius: 25px;
 
-  border: 1px solid white;
+    box-shadow:
+        inset 0 5px 10px rgba(255,255,255,.9),
+        0 6px 15px rgba(0,100,150,.2);
 
-  box-shadow:
-    0 5px 12px rgba(0,100,150,.14),
-    inset 0 2px 3px white;
+    transition: .2s;
 }
 
-.social:hover {
-  transform: translateY(-3px);
+.staff-card:hover {
+    transform: translateY(-7px) rotate(-1deg);
 }
 
+.staff-avatar {
+    width: 90px;
+    height: 90px;
+
+    margin: auto auto 12px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            white,
+            #8eefff 25%,
+            #12a7d6 80%
+        );
+
+    border: 4px solid white;
+
+    box-shadow:
+        inset -8px -10px 15px rgba(0,80,150,.2),
+        0 5px 12px rgba(0,100,150,.2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+.staff-card h3 {
+    margin: 7px 0;
+    color: #007ba2;
+}
+
+.role {
+    color: #41a746;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* =========================================================
+   ISSUES
+   ========================================================= */
+
+.issues {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+
+    gap: 22px;
+}
+
+.issue {
+    min-height: 260px;
+
+    padding: 20px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #bdf4ff 55%,
+            #78dce9
+        );
+
+    border: 4px solid white;
+
+    box-shadow:
+        0 8px 18px rgba(0,100,150,.22),
+        inset 0 0 20px rgba(255,255,255,.8);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.issue::after {
+    content: "✦";
+
+    position: absolute;
+
+    right: 15px;
+    top: 8px;
+
+    font-size: 35px;
+
+    color: white;
+}
+
+.issue-number {
+    color: #46a942;
+    font-weight: bold;
+}
+
+.issue h3 {
+    color: #007ea5;
+    font-size: 25px;
+}
+
+/* =========================================================
+   JOIN
+   ========================================================= */
+
+.join {
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(213,255,218,.9),
+            rgba(161,246,255,.9)
+        );
+}
+
+.big-button {
+    display: inline-block;
+
+    padding: 16px 32px;
+
+    border-radius: 35px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            #eaffff,
+            #8cf1a5 35%,
+            #35bd68 52%,
+            #6de68b
+        );
+
+    border: 3px solid white;
+
+    box-shadow:
+        0 5px 0 #278e4b,
+        0 10px 20px rgba(30,130,70,.3);
+
+    text-shadow: 0 2px 2px #287b3e;
+
+    transition: .2s;
+}
+
+.big-button:hover {
+    transform: translateY(-4px) scale(1.04);
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.link {
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    color: #007596;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    background: rgba(255,255,255,.8);
+
+    border: 2px solid white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 4px 10px rgba(0,100,150,.15),
+        inset 0 2px 5px white;
+}
+
+.link:hover {
+    background: #d9fbff;
+    transform: scale(1.05);
+}
 
 /* =========================================================
    FOOTER
    ========================================================= */
 
 footer {
-  margin: 25px 0 35px;
+    margin: 30px 0 15px;
 
-  padding: 25px;
+    padding: 20px;
 
-  text-align: center;
+    text-align: center;
 
-  border-radius: 28px;
+    color: white;
 
-  background: rgba(255,255,255,.6);
+    font-size: 12px;
+    font-weight: bold;
 
-  border: 2px solid white;
-
-  box-shadow:
-    inset 0 2px 5px white,
-    0 8px 20px rgba(0,100,140,.13);
-
-  color: #39768a;
+    text-shadow: 0 1px 3px #1684a5;
 }
 
-.footer-stars {
-  font-size: 20px;
-  letter-spacing: 7px;
-}
+.mini-web {
+    display: inline-block;
 
+    margin-top: 8px;
+
+    padding: 5px 10px;
+
+    background: rgba(255,255,255,.6);
+
+    border: 1px solid white;
+
+    color: #087092;
+
+    text-shadow: none;
+
+    border-radius: 5px;
+}
 
 /* =========================================================
    MOBILE
    ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
-  .wrapper {
-    width: 94%;
-  }
+    .sun {
+        width: 150px;
+        height: 150px;
+    }
 
-  .status {
-    font-size: 9px;
-  }
+    .hero {
+        padding: 35px 22px;
+    }
 
-  header {
-    padding: 25px 15px 20px;
-  }
+    .hero-orb {
+        opacity: .35;
+        right: -30px;
+    }
 
-  .logo {
-    letter-spacing: 4px;
-  }
+    .eic {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 
-  nav a {
-    padding: 8px 11px;
-    font-size: 11px;
-  }
+    .eic-photo {
+        margin: auto;
+    }
 
-  .hero {
-    padding: 45px 20px;
-  }
+    .section-content {
+        padding: 20px;
+    }
 
-  section {
-    padding: 22px 18px;
-  }
+    .topbar {
+        font-size: 9px;
+    }
 
-  h2 {
-    font-size: 1.65rem;
-  }
+    .cloud {
+        opacity: .7;
+    }
 
-  .cloud {
-    opacity: .45;
-  }
 }
 
 </style>
@@ -789,21 +901,36 @@ footer {
 
 <body>
 
-
-<!-- =======================================================
+<!-- =====================================================
      BACKGROUND
-     ======================================================= -->
+     ===================================================== -->
 
 <div class="sky">
 
-  <div class="bubble one"></div>
-  <div class="bubble two"></div>
-  <div class="bubble three"></div>
-  <div class="bubble four"></div>
+    <div class="sun"></div>
 
-  <div class="cloud one">☁️☁️</div>
-  <div class="cloud two">☁️☁️</div>
-  <div class="cloud three">☁️☁️</div>
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+
+</div>
+
+
+<div class="bubbles">
+
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+    <div class="bubble b4"></div>
+    <div class="bubble b5"></div>
+    <div class="bubble b6"></div>
+    <div class="bubble b7"></div>
+    <div class="bubble b8"></div>
+
+    <div class="sparkle s1">✦</div>
+    <div class="sparkle s2">✧</div>
+    <div class="sparkle s3">✦</div>
+    <div class="sparkle s4">✧</div>
 
 </div>
 
@@ -811,492 +938,152 @@ footer {
 <div class="wrapper">
 
 
-<!-- =======================================================
-     STATUS
-     ======================================================= -->
+<!-- =====================================================
+     OLD WEB STATUS BAR
+     ===================================================== -->
 
-<div class="status">
+<div class="topbar">
 
-  <span>
-    ✦ CELESTE WEBSPACE v1.0
-  </span>
+    <span>✦ CELESTE WEBSPACE v1.0</span>
 
-  <span class="online">
-    ● ONLINE
-  </span>
+    <span>● ONLINE</span>
 
 </div>
 
 
-<!-- =======================================================
+<!-- =====================================================
      HEADER
-     ======================================================= -->
+     ===================================================== -->
 
 <header>
 
-  <div class="logo">
-    CELESTE
-  </div>
+    <div class="logo">
+        CELESTE
+    </div>
 
-  <div class="subtitle">
-    literature · art · ideas · community
-  </div>
-
-
-  <nav>
-
-    <a href="#about">ABOUT</a>
-    <a href="#eic">EIC</a>
-    <a href="#staff">STAFF</a>
-    <a href="#issues">ISSUES</a>
-    <a href="#volunteer">JOIN US</a>
-    <a href="#links">LINKS</a>
-
-  </nav>
+    <div class="subtitle">
+        ✧ a little corner of the internet for words, art & everything in between ✧
+    </div>
 
 </header>
 
 
-<!-- =======================================================
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
+
+<nav class="nav">
+
+    <a href="#about">ABOUT</a>
+
+    <a href="#eic">EIC</a>
+
+    <a href="#staff">STAFF</a>
+
+    <a href="#issues">ISSUES</a>
+
+    <a href="#join">JOIN US</a>
+
+    <a href="#links">LINKS</a>
+
+</nav>
+
+
+<!-- =====================================================
      HERO
-     ======================================================= -->
+     ===================================================== -->
 
-<div class="hero">
+<section class="hero">
 
-  <div class="aero-orb">
-    🫧
-  </div>
+    <div class="hero-orb"></div>
 
-  <h1>
-    welcome to celeste
-  </h1>
+    <h1>welcome to celeste! ✦</h1>
 
-  <p>
-    a little corner of the internet for words,
-    art, ideas, strange thoughts and the people
-    brave enough to put them into the world.
-  </p>
+    <!-- EDIT THIS -->
 
-  <a href="#about" class="button">
-    ENTER CELESTE →
-  </a>
+    <p>
+        a literary and creative space for young writers,
+        artists, thinkers, dreamers and everyone who has
+        ever had too many tabs open in their head.
+    </p>
 
-</div>
+    <p>
+        ✧ explore our issues · meet our staff · send us your work · stay awhile ✧
+    </p>
+
+</section>
 
 
-<!-- =======================================================
+<!-- =====================================================
      ABOUT
-     ======================================================= -->
+     ===================================================== -->
 
-<section id="about">
+<section class="section" id="about">
 
-  <div class="window-bar">
+    <div class="windowbar">
 
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
+        <span>CELESTE / ABOUT.EXE</span>
 
-    <span class="window-title">
-      CELESTE / ABOUT.EXE
-    </span>
+        <div class="windowbuttons">
+            <span>—</span>
+            <span>□</span>
+            <span>×</span>
+        </div>
 
-  </div>
+    </div>
 
+    <div class="section-content">
 
-  <h2>
-    What is Celeste? ✦
-  </h2>
+        <h2>what is celeste? ☁</h2>
 
+        <!-- EDIT THIS -->
 
-  <p>
+        <p>
+            Celeste Organisation is a creative space dedicated to
+            literature, art, expression and community.
+        </p>
 
-    <!-- EDIT THIS -->
+        <p>
+            Replace this section with the actual description of
+            Celeste Organisation.
+        </p>
 
-    Celeste Organisation is an independent creative
-    platform dedicated to literature, art, ideas
-    and community.
+        <p>
+            You can talk about your mission, values, themes,
+            community and what makes Celeste different.
+        </p>
 
-  </p>
-
-
-  <p>
-
-    <!-- EDIT THIS -->
-
-    We believe in creating a space where young voices
-    can experiment, express themselves and find people
-    who care about the things they create.
-
-  </p>
-
-
-  <p>
-
-    <!-- EDIT THIS -->
-
-    Add Celeste's history, mission, values and anything
-    else you want visitors to know here.
-
-  </p>
+    </div>
 
 </section>
 
 
-
-<!-- =======================================================
+<!-- =====================================================
      EIC
-     ======================================================= -->
+     ===================================================== -->
 
-<section id="eic">
+<section class="section" id="eic">
 
-  <div class="window-bar">
+    <div class="windowbar">
 
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
+        <span>MESSAGE_FROM_THE_EIC.TXT</span>
 
-    <span class="window-title">
-      MESSAGE_FROM_THE_EIC.TXT
-    </span>
-
-  </div>
-
-
-  <h2>
-    Words from the EIC 💌
-  </h2>
-
-
-  <div class="eic-message">
-
-    <div class="quote">
-
-      <!-- EDIT THIS -->
-
-      “Write the Editor-in-Chief's message here.
-
-      Tell visitors why Celeste exists,
-      what it means to you and what you
-      hope this little organisation becomes.”
+        <div class="windowbuttons">
+            <span>—</span>
+            <span>□</span>
+            <span>×</span>
+        </div>
 
     </div>
 
+    <div class="section-content eic">
 
-    <br>
+        <div class="eic-photo">
+            ✦
+        </div>
 
-    <strong>
-      — [EIC NAME]
-    </strong>
+        <div>
 
-  </div>
+            <h2>words from the EIC ♡</h2>
 
-</section>
-
-
-
-<!-- =======================================================
-     STAFF
-     ======================================================= -->
-
-<section id="staff">
-
-  <div class="window-bar">
-
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-
-    <span class="window-title">
-      CELESTE / STAFF_DIRECTORY
-    </span>
-
-  </div>
-
-
-  <h2>
-    The people behind Celeste ☁️
-  </h2>
-
-
-  <p>
-    Meet the humans keeping this strange little
-    corner of the internet alive.
-  </p>
-
-
-  <div class="cards">
-
-
-    <!-- STAFF MEMBER -->
-
-    <div class="card staff-card">
-
-      <div class="avatar">
-        ✦
-      </div>
-
-      <h3>
-        [NAME]
-      </h3>
-
-      <p>
-        <strong>Editor-in-Chief</strong>
-      </p>
-
-      <p>
-        <!-- EDIT THIS -->
-        Short biography goes here.
-      </p>
-
-    </div>
-
-
-    <!-- STAFF MEMBER -->
-
-    <div class="card staff-card">
-
-      <div class="avatar">
-        ☁
-      </div>
-
-      <h3>
-        [NAME]
-      </h3>
-
-      <p>
-        <strong>[ROLE]</strong>
-      </p>
-
-      <p>
-        <!-- EDIT THIS -->
-        Short biography goes here.
-      </p>
-
-    </div>
-
-
-    <!-- STAFF MEMBER -->
-
-    <div class="card staff-card">
-
-      <div class="avatar">
-        ✧
-      </div>
-
-      <h3>
-        [NAME]
-      </h3>
-
-      <p>
-        <strong>[ROLE]</strong>
-      </p>
-
-      <p>
-        <!-- EDIT THIS -->
-        Short biography goes here.
-      </p>
-
-    </div>
-
-
-    <!-- STAFF MEMBER -->
-
-    <div class="card staff-card">
-
-      <div class="avatar">
-        ♡
-      </div>
-
-      <h3>
-        [NAME]
-      </h3>
-
-      <p>
-        <strong>[ROLE]</strong>
-      </p>
-
-      <p>
-        <!-- EDIT THIS -->
-        Short biography goes here.
-      </p>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     ISSUES
-     ======================================================= -->
-
-<section id="issues">
-
-  <div class="window-bar">
-
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-
-    <span class="window-title">
-      CELESTE / ARCHIVE
-    </span>
-
-  </div>
-
-
-  <h2>
-    The Issues 📖
-  </h2>
-
-
-  <p>
-    Browse our archive and discover the words,
-    artwork and ideas we've collected along the way.
-  </p>
-
-
-  <div class="cards">
-
-
-    <div class="card issue">
-
-      <div class="issue-number">
-        CELESTE / ISSUE 01
-      </div>
-
-      <div>
-
-        <h3>
-          [ISSUE TITLE]
-        </h3>
-
-        <p>
-          <!-- EDIT THIS -->
-          Add the theme and description
-          of the issue here.
-        </p>
-
-      </div>
-
-      <a href="#" class="button">
-        READ ISSUE →
-      </a>
-
-    </div>
-
-
-
-    <div class="card issue">
-
-      <div class="issue-number">
-        CELESTE / ISSUE 02
-      </div>
-
-      <div>
-
-        <h3>
-          [ISSUE TITLE]
-        </h3>
-
-        <p>
-          <!-- EDIT THIS -->
-          Add the theme and description
-          of the issue here.
-        </p>
-
-      </div>
-
-      <a href="#" class="button">
-        READ ISSUE →
-      </a>
-
-    </div>
-
-
-
-    <div class="card issue">
-
-      <div class="issue-number">
-        CELESTE / ISSUE 03
-      </div>
-
-      <div>
-
-        <h3>
-          [ISSUE TITLE]
-        </h3>
-
-        <p>
-          <!-- EDIT THIS -->
-          Add the theme and description
-          of the issue here.
-        </p>
-
-      </div>
-
-      <a href="#" class="button">
-        READ ISSUE →
-      </a>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     VOLUNTEER
-     ======================================================= -->
-
-<section id="volunteer">
-
-  <div class="window-bar">
-
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-
-    <span class="window-title">
-      JOIN_CELESTE.EXE
-    </span>
-
-  </div>
-
-
-  <h2>
-    Wanna join us? 🫧
-  </h2>
-
-
-  <p>
-
-    Celeste is always looking for writers,
-    editors, artists, designers, researchers,
-    social media managers and other creative minds.
-
-  </p>
-
-
-  <p>
-
-    <!-- EDIT THIS -->
-
-    Add your current openings,
-    application information and
-    what you're looking for here.
-
-  </p>
-
-
-  <!-- REPLACE # WITH YOUR APPLICATION FORM -->
-
-  <a href="#" class="button">
-    OPEN VOLUNTEER APPLICATION →
-  </a>
+         
